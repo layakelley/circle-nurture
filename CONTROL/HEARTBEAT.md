@@ -4,9 +4,9 @@
 
 | Loop | Last tick | Status |
 |---|---|---|
-| build | 2026-08-12T15:05 | starting — WI-01 dispatched |
-| review | 2026-08-12T15:05 | armed (judge = conductor, distinct model — see session log) |
-| merge | 2026-08-12T15:05 | armed — first batch pending WI-01 |
+| build | 2026-08-12T16:12 | STOPPED — all four C5 boxes green, no new cards dispatched |
+| review | 2026-08-12T16:15 | STOPPED — last verdict: WI-21 PASS |
+| merge | 2026-08-12T16:15 | STOPPED — last batch: 8 (v0.8.0, cn-0.8.0) |
 | watch | *(no separate terminal this run)* | not started |
-| bar | 2026-08-12T15:05 | armed (Playwright probe, proven ready) |
-| survival | 2026-08-12T15:05 | watching C5 boxes |
+| bar | 2026-08-12T16:05 | STOPPED — last Gate 3 check: WI-21 live-render tie |
+| survival | 2026-08-12T16:15 | **C5 complete — writing morning report, run ending** |
