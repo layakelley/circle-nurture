@@ -84,6 +84,16 @@ export default function HomeView() {
         <h1 className="home-view__title">Circle Nurture</h1>
       </header>
 
+      {!isEmpty ? (
+        <button
+          type="button"
+          className="home-view__blast-button"
+          onClick={() => navigate('/blast')}
+        >
+          Private Blast — write once, reach several people privately
+        </button>
+      ) : null}
+
       {nudges.length > 0 ? (
         <section className="home-view__section" aria-label="gentle nudges">
           {nudges.map((nudge) => (

@@ -35,4 +35,10 @@
 | 29 | 2026-08-12T15:52 | review | judge (conductor) | claude/fable-5 | WI-09, WI-13 | both PASS, 9.2-9.4/10, 0 fix rounds |
 | 30 | 2026-08-12T15:53 | integration | conductor (glue) | claude/fable-5 | Message action on PersonView, WhatNextSheet after Add Person | found + fixed a real navigation race (onClose stomping the specific action's navigate); verified via probe |
 | 31 | 2026-08-12T15:56 | merge | merger (conductor) | claude/fable-5 | batch 6 (WI-09,13) | v0.6.0 / tag cn-0.6.0 |
+| 32 | 2026-08-12T15:59 | build | [MODEL x3-1] builder | claude/sonnet | WI-10 private blast | built, commit 03245e9 |
+| 33 | 2026-08-12T15:59 | build | [MODEL x3-2] builder | claude/sonnet | WI-14 next connect | built, commit 6e26901 |
+| 34 | 2026-08-12T15:59 | build | [MODEL x3-3] builder | claude/sonnet | WI-18 truetone | built, commit a389b3b |
+| 35 | 2026-08-12T16:05 | review | judge (conductor) | claude/fable-5 | WI-10, WI-14, WI-18 | all PASS, 9.3-9.6/10, 0 fix rounds; WI-10 personally code-read line-by-line given the hard privacy invariant |
+| 36 | 2026-08-12T16:07 | integration | conductor (glue) | claude/fable-5 | /blast route + Home entry, NextConnect+TrueTone on PersonView, TrueTone key in Settings | done; box 4 verified end-to-end |
+| 37 | 2026-08-12T16:11 | merge | merger (conductor) | claude/fable-5 | batch 7 (WI-10,14,18) | v0.7.0 / tag cn-0.7.0 |
 | — | *(the build appends each dispatch here)* | | | | | |

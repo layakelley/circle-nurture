@@ -6,6 +6,7 @@ import CircleView from './views/CircleView'
 import SettingsView from './views/SettingsView'
 import ImportView from './views/ImportView'
 import PersonView from './views/PersonView'
+import BlastView from './views/BlastView'
 import WhatNextSheet from './components/WhatNextSheet'
 import { getPerson } from './data/people.repo'
 
@@ -84,6 +85,7 @@ export function AppRoutes() {
       <Route path="/settings" element={<SettingsView />} />
       <Route path="/import" element={<ImportView />} />
       <Route path="/person/:personId" element={<PersonRoute />} />
+      <Route path="/blast" element={<BlastView />} />
     </Routes>
   )
 }

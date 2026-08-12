@@ -13,6 +13,20 @@
   position: relative;
 }
 
+.home-view__blast-button {
+  min-height: var(--tap-target-min);
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+  cursor: pointer;
+}
+
 .home-view__title {
   margin: 0;
   font-size: var(--font-size-2xl);

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { downloadExport } from '../utils/export'
+import { getStoredApiKey, setStoredApiKey, clearStoredApiKey } from '../utils/llm'
 
 // ---------------------------------------------------------------------
 // Settings — export/backup + the privacy statement.
@@ -13,6 +14,24 @@ type ExportStatus = 'idle' | 'exporting' | 'done' | 'error'
 
 export default function SettingsView() {
   const [status, setStatus] = useState<ExportStatus>('idle')
+  const [apiKeyInput, setApiKeyInput] = useState(() => getStoredApiKey() ?? '')
+  const [keySaved, setKeySaved] = useState(false)
+
+  function handleSaveKey() {
+    if (apiKeyInput.trim()) {
+      setStoredApiKey(apiKeyInput)
+      setKeySaved(true)
+    } else {
+      clearStoredApiKey()
+      setKeySaved(false)
+    }
+  }
+
+  function handleClearKey() {
+    clearStoredApiKey()
+    setApiKeyInput('')
+    setKeySaved(false)
+  }
 
   async function handleExport() {
     setStatus('exporting')
@@ -42,6 +61,39 @@ export default function SettingsView() {
         {status === 'error' && (
           <p role="alert">Something went wrong preparing that export. Please try again.</p>
         )}
+      </section>
+
+      <section className="settings-section" aria-labelledby="truetone-heading">
+        <h2 id="truetone-heading">TrueTone (optional)</h2>
+        <p>
+          TrueTone can help draft the right words when you're not sure what to say. It's
+          entirely optional — messaging works fine without it. To use it, add your own
+          OpenAI-compatible API key here; it's stored only on this device and used only when
+          you ask TrueTone to draft something.
+        </p>
+        <label htmlFor="truetone-api-key" className="settings-label">
+          API key
+        </label>
+        <input
+          id="truetone-api-key"
+          type="password"
+          value={apiKeyInput}
+          onChange={(event) => {
+            setApiKeyInput(event.target.value)
+            setKeySaved(false)
+          }}
+          placeholder="sk-…"
+          autoComplete="off"
+        />
+        <div className="settings-truetone-actions">
+          <button type="button" onClick={handleSaveKey}>
+            Save key
+          </button>
+          <button type="button" onClick={handleClearKey}>
+            Remove key
+          </button>
+        </div>
+        {keySaved && <p role="status">Key saved on this device.</p>}
       </section>
 
       <section className="settings-section" aria-labelledby="privacy-heading">

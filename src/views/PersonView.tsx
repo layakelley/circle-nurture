@@ -3,11 +3,15 @@ import { useLiveQuery } from 'dexie-react-hooks'
 import { getPerson, updatePerson } from '../data/people.repo'
 import { listCirclesForPerson } from '../data/circleMembers.repo'
 import { listCircles } from '../data/circles.repo'
+import { createConnectionLog } from '../data/connectionLog.repo'
 import CircleChip from '../components/CircleChip'
 import ContextStrip from '../components/ContextStrip'
 import MemoryList from '../components/MemoryList'
 import MemoryComposer from '../components/MemoryComposer'
-import Composer from '../components/Composer'
+import Composer, { buildSmsUrl, smsNavigation } from '../components/Composer'
+import TrueTonePanel from '../components/TrueTonePanel'
+import NextConnectSheet from '../components/NextConnectSheet'
+import NextConnectSummary from '../components/NextConnectSummary'
 import './PersonView.css'
 
 // ---------------------------------------------------------------------
@@ -81,10 +85,26 @@ export default function PersonView({ personId }: PersonViewProps) {
 
   const [editing, setEditing] = useState(false)
   const [form, setForm] = useState<ConnectionFormState | null>(null)
+  const [trueToneOpen, setTrueToneOpen] = useState(false)
+  const [nextConnectOpen, setNextConnectOpen] = useState(false)
 
   // Ref on the composer's wrapper so the "Add memory" action can bring
   // it into view / focus it, rather than duplicating a second composer.
   const composerRef = useRef<HTMLDivElement | null>(null)
+
+  // WI-18 integration: TrueTone hands back a drafted, user-edited body of
+  // text via onUseDraft — it never sends anything itself (see
+  // TrueTonePanel.tsx). Launching the sms: composer here reuses the exact
+  // same single-recipient helpers Composer.tsx uses internally, so this
+  // path carries the identical privacy guarantee (one phone, one URL,
+  // never an array).
+  async function handleUseTrueToneDraft(text: string) {
+    setTrueToneOpen(false)
+    if (!person?.phone || !person.phone.trim()) return
+    const url = buildSmsUrl(person.phone.trim(), text)
+    smsNavigation.navigate(url)
+    await createConnectionLog({ personId, kind: 'message' })
+  }
 
   function startEdit() {
     if (!person) return
@@ -161,6 +181,8 @@ export default function PersonView({ personId }: PersonViewProps) {
       {/* WI-17 fills in the rest of the context strip; see the comment
           inside ContextStrip.tsx itself for exactly what lands there. */}
       <ContextStrip personId={personId} />
+
+      <NextConnectSummary personId={personId} />
 
       {personCircles.length > 0 ? (
         <div className="person-view__circles" aria-label="Circles">
@@ -333,11 +355,37 @@ export default function PersonView({ personId }: PersonViewProps) {
           Add memory
         </button>
         <Composer person={{ id: personId, name: person.name, phone: person.phone }} />
-        {/*
-          WI-14 ("Next Connect") lands here. Not built yet — intentionally
-          not rendered until built.
-        */}
+        {person.phone && person.phone.trim() ? (
+          <button
+            type="button"
+            className="person-view__action-button person-view__action-button--ghost"
+            onClick={() => setTrueToneOpen(true)}
+          >
+            Need the right words?
+          </button>
+        ) : null}
+        <button
+          type="button"
+          className="person-view__action-button person-view__action-button--ghost"
+          onClick={() => setNextConnectOpen(true)}
+        >
+          Plan a next connect
+        </button>
       </div>
+
+      {trueToneOpen ? (
+        <TrueTonePanel
+          personName={person.name}
+          personContext={person.remember || person.whatConnectedUs || person.howMet}
+          onUseDraft={(text) => void handleUseTrueToneDraft(text)}
+        />
+      ) : null}
+
+      <NextConnectSheet
+        personId={personId}
+        open={nextConnectOpen}
+        onClose={() => setNextConnectOpen(false)}
+      />
     </div>
   )
 }
