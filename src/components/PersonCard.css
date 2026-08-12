@@ -1,0 +1,38 @@
+/*
+  PersonCard — a warm card for one person: name, an optional one-line
+  human context, and the circles they belong to (as chips).
+*/
+
+.person-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  min-height: var(--tap-target-min);
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.person-card__name {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
+
+.person-card__context {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  color: var(--color-text-muted);
+}
+
+.person-card__circles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin-top: var(--space-2xs);
+}

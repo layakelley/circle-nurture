@@ -1,0 +1,31 @@
+/*
+  CircleChip — a small warm tile/chip representing one circle.
+  Used both as a standalone tappable tile (HomeView's "your circles" row)
+  and as a passive display chip nested inside a PersonCard.
+*/
+
+.circle-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-target-min);
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-soft);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-calm);
+}
+
+.circle-chip:hover {
+  background-color: var(--color-accent-soft);
+}
+
+.circle-chip:active {
+  background-color: var(--color-accent-soft);
+}
