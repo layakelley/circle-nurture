@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!--
+      viewport-fit=cover lets the page extend under the notch / home
+      indicator so env(safe-area-inset-*) has real values to report;
+      the shell then pads itself back in (see src/styles/base.css).
+    -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f4ede4" />
+    <meta name="description" content="Circle Nurture — a calm, private way to keep up with your people and circles." />
+    <title>Circle Nurture</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
