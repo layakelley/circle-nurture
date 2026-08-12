@@ -8,7 +8,17 @@ import { createMemory } from '../src/data/memories.repo'
 import { createNextConnect } from '../src/data/nextConnects.repo'
 import { createConnectionLog } from '../src/data/connectionLog.repo'
 
-const ALL_TABLE_NAMES = ['people', 'circles', 'circleMembers', 'memories', 'nextConnects', 'connectionLog']
+const ALL_TABLE_NAMES = [
+  'people',
+  'circles',
+  'circleMembers',
+  'memories',
+  'nextConnects',
+  'connectionLog',
+  // WI-11: gentle-nudge dismissals — a new additive table (schema v2) that
+  // exportAllData picks up generically via db.tables, so it's expected here.
+  'nudgeDismissals',
+]
 
 describe('export / backup / restore', () => {
   beforeEach(async () => {
