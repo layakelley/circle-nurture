@@ -3,7 +3,7 @@
 *(Document 6 — the single source of truth the loops read (decision C1). The build reads this file, dispatches the next ready card, and updates it. Statuses: `pending` → `queued` (deps met) → `building` → `review` → `merged`. `blocked` = a real blocker with a written reason — never a silent skip.)*
 
 **Repo:** `circle-nurture` (branch `main`) · **Harness:** Claude-Nine · **Last heartbeat:** *(first loop writes here)*
-**Batch counter:** 0 · **Last merge stamp:** — · **HEAD:** (repo not yet created)
+**Batch counter:** 0 · **Last merge stamp:** — · **HEAD:** `d6f2673` (audited apparatus committed; repo created 2026-08-12, origin/main current)
 
 ---
 

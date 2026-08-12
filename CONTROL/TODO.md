@@ -4,7 +4,7 @@
 
 ## Conductor pre-build (before the user walks away)
 - [ ] **Self-audit the apparatus (Law 30)** — a DIFFERENT agent audits all sixteen documents: ten categories, an adversarial break-it pass, a by-command census, and GL-001…GL-008 validation. Fix until 8.5+. *(Task 8.)*
-- [ ] **Create the GitHub repo** — `circle-nurture` on `layakelley`, branch `main`; token already smoke-tested. *(Task 9.)*
+- [x] **Create the GitHub repo** — `circle-nurture` on `layakelley`, branch `main`, public (Pages free tier), apparatus committed and pushed as `d6f2673`. *(Task 9 — done 2026-08-12.)*
 - [x] **Write the launch command + multi-terminal instructions** — under 3,900 characters, referencing the Gauntlet block by pointer. Hand over; the user walks away. *(Task 9 — done 2026-08-12: CONTROL/LAUNCH.md.)*
 
 ## Build-side (the loops consume these; statuses live in the ledger)
