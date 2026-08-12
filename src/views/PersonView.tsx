@@ -7,6 +7,7 @@ import CircleChip from '../components/CircleChip'
 import ContextStrip from '../components/ContextStrip'
 import MemoryList from '../components/MemoryList'
 import MemoryComposer from '../components/MemoryComposer'
+import Composer from '../components/Composer'
 import './PersonView.css'
 
 // ---------------------------------------------------------------------
@@ -331,13 +332,9 @@ export default function PersonView({ personId }: PersonViewProps) {
         <button type="button" className="person-view__action-button" onClick={handleAddMemory}>
           Add memory
         </button>
+        <Composer person={{ id: personId, name: person.name, phone: person.phone }} />
         {/*
-          WI-09 ("Message") lands here. Not built yet — intentionally not
-          rendered at all (not even disabled) so nothing tappable-looking
-          appears before it's real.
-        */}
-        {/*
-          WI-14 ("Next Connect") lands here. Same as above — intentionally
+          WI-14 ("Next Connect") lands here. Not built yet — intentionally
           not rendered until built.
         */}
       </div>

@@ -5,6 +5,9 @@
 ## v0.0.0 — 2026-08-12 (apparatus)
 - Project apparatus written by the conductor (sixteen documents). No app code yet.
 
+## v0.6.0 — 2026-08-12 (tag: cn-0.6.0)
+- Wave 6: WI-09 Message one person (single-recipient `sms:` launcher, plain-language guard for missing phone, connectionLog write on send) and WI-13 What's Next? (four-option calm bridge after adding someone: message / next connect / add memory / nothing yet). Conductor integration wired both into the real app — the Message action now lives on every person's profile, and the What's Next sheet appears right after Add Person. **Caught and fixed a real integration bug** during the probe: the sheet calls both its specific action callback and `onClose` on every tap, and the naive wiring let `onClose`'s "go Home" navigation stomp the "Send a Message" navigation; fixed with a routed-elsewhere guard, then verified end-to-end (add person → What's Next → Send a Message → lands on their profile with a working Message button). 76/76 tests pass; build exits 0.
+
 ## v0.5.0 — 2026-08-12 (tag: cn-0.5.0)
 - WI-08 person profile + Our Connection: context, circles, memories, and actions compose into one page, distinct Our-Connection vs Memories sections, inline editing that persists, unknown met-date renders no date/no error. Found and fixed a real flaky-test issue while independently verifying this card (edit-persist assertions in both the new PersonView test and the already-merged WI-07 memories test raced against the live-query re-render; combined into single stable waitFor checks — 15/15 clean runs after the fix). Conductor integration: `/person/:id` route wired, person cards on Home are now tappable and open the profile. **Completion box 3 (jot a memory) verified working end-to-end at HEAD** (probe: add a person → tap their card on Home → profile opens → memory composer works). 59/59 tests pass; build exits 0.
 

@@ -19,9 +19,9 @@ Built with React + Vite, stored in IndexedDB (Dexie), served as an installable P
 ## Status
 
 The app is being built by an autonomous build/QC/merge loop — see `CONTROL/LEDGER.md` for
-live status and `CONTROL/CHANGELOG.md` for what's landed. Current: `v0.5.0` — scaffold through person profiles are in and navigable end to
-end (add a person → open their profile → jot a memory). Messaging (one-to-one and
-Private Blast) is still building.
+live status and `CONTROL/CHANGELOG.md` for what's landed. Current: `v0.6.0` — scaffold through one-to-one messaging are in and navigable
+end to end (add a person → What's Next → message them, or open their profile any
+time). Private Blast (the centerpiece multi-recipient flow) is still building.
 
 ## Update
 

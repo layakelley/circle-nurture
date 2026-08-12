@@ -30,4 +30,9 @@
 | 24 | 2026-08-12T15:41 | review | judge (conductor) | claude/fable-5 | WI-08 | found flaky test race (edit-persist assertions vs. live-query timing), reproduced across 15 runs, root-caused, fixed in both WI-08's new test and WI-07's already-merged test; verified 15/15 stable after fix |
 | 25 | 2026-08-12T15:47 | integration | conductor (glue) | claude/fable-5 | /person/:id route, tappable PersonCard | done; box 3 verified end-to-end |
 | 26 | 2026-08-12T15:49 | merge | merger (conductor) | claude/fable-5 | batch 5 (WI-08) | v0.5.0 / tag cn-0.5.0 |
+| 27 | 2026-08-12T15:51 | build | [MODEL x2-1] builder | claude/sonnet | WI-09 message | built, commit 2f44d3c |
+| 28 | 2026-08-12T15:51 | build | [MODEL x2-2] builder | claude/sonnet | WI-13 what's next | built, commit 3cd6e79 |
+| 29 | 2026-08-12T15:52 | review | judge (conductor) | claude/fable-5 | WI-09, WI-13 | both PASS, 9.2-9.4/10, 0 fix rounds |
+| 30 | 2026-08-12T15:53 | integration | conductor (glue) | claude/fable-5 | Message action on PersonView, WhatNextSheet after Add Person | found + fixed a real navigation race (onClose stomping the specific action's navigate); verified via probe |
+| 31 | 2026-08-12T15:56 | merge | merger (conductor) | claude/fable-5 | batch 6 (WI-09,13) | v0.6.0 / tag cn-0.6.0 |
 | — | *(the build appends each dispatch here)* | | | | | |
