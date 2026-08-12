@@ -1,0 +1,13 @@
+/*
+  ContextStrip — a quiet, factual ≤3-line strip near the top of a
+  person's profile. No score, no "overdue" styling — just plain stated
+  facts in muted text.
+*/
+
+.context-strip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}

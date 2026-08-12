@@ -87,8 +87,15 @@ describe('MemoryList — edit, delete, pin', () => {
     await user.type(editField, 'Updated text')
     await user.click(screen.getByRole('button', { name: 'Save' }))
 
-    await waitFor(() => expect(screen.getByText('Updated text')).toBeInTheDocument())
-    expect(screen.queryByText('Original text')).not.toBeInTheDocument()
+    // Check both conditions together inside one waitFor rather than as two
+    // separate assertions — the live-query re-render and the edit-mode
+    // state update settle asynchronously and independently, so a strict
+    // two-step check can catch a benign intermediate render as a false
+    // failure.
+    await waitFor(() => {
+      expect(screen.getByText('Updated text')).toBeInTheDocument()
+      expect(screen.queryByText('Original text')).not.toBeInTheDocument()
+    })
 
     const rows = await listMemoriesByPerson(PERSON_ID)
     expect(rows).toHaveLength(1)
