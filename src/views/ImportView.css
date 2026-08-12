@@ -1,0 +1,186 @@
+/*
+  ImportView — styles scoped to this view only (class names are all
+  prefixed import-view__ so this file can't collide with any other
+  card's CSS). Uses the shared warm-calm tokens from styles/tokens.css,
+  matching the layout/interaction conventions established in
+  CircleView.css (sectioned cards, same button/input treatment).
+*/
+
+.import-view {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding: var(--space-lg);
+}
+
+.import-view__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.import-view__title {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.import-view__subtitle {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+}
+
+.import-view__subtitle-2 {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.import-view__hint,
+.import-view__note {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+}
+
+.import-view__notice {
+  margin: 0;
+  color: var(--color-accent-strong);
+  font-size: var(--font-size-sm);
+}
+
+.import-view__picker {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+}
+
+.import-view__link {
+  color: var(--color-accent-strong);
+}
+
+.import-view__file-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.import-view__file-input {
+  max-width: 100%;
+}
+
+.import-view__input,
+.import-view__select {
+  flex: 1 1 auto;
+  min-width: 10rem;
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.import-view__btn {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-calm);
+}
+
+.import-view__btn--primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text-on-accent);
+}
+
+.import-view__btn--primary:hover {
+  background: var(--color-accent-strong);
+}
+
+.import-view__btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--color-text-muted);
+}
+
+.import-view__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.import-view__checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.import-view__checklist-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.import-view__checkbox-label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  min-height: var(--tap-target-min);
+  cursor: pointer;
+}
+
+.import-view__contact-name {
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+
+.import-view__contact-detail {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.import-view__dupe-tag {
+  color: var(--color-gentle);
+  font-size: var(--font-size-xs);
+  background: var(--color-accent-soft);
+  border-radius: var(--radius-full);
+  padding: var(--space-2xs) var(--space-xs);
+}
+
+.import-view__circle-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.import-view__status {
+  color: var(--color-accent-strong);
+  font-size: var(--font-size-sm);
+}
