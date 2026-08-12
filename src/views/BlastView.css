@@ -1,0 +1,142 @@
+/*
+  BlastView — Private Blast: write one message once, pick recipients
+  (individuals, whole circles, or a mix), and send each of them their own
+  private sms: composer, one at a time. Same warm-neutral surface
+  language as PersonView/Composer — no urgency styling, nothing here
+  should ever look or feel like a group chat.
+*/
+
+.blast-view {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.blast-view__title {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
+
+.blast-view__tagline {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.blast-view__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.blast-view__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.blast-view__textarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  resize: vertical;
+}
+
+.blast-view__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.blast-view__section-title {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.blast-view__empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.blast-view__people-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.blast-view__checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: var(--tap-target-min);
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+}
+
+.blast-view__circle-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.blast-view__count {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.blast-view__send-button {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-lg);
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--color-text-on-accent);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.blast-view__send-button:hover:not(:disabled) {
+  background: var(--color-accent-strong);
+}
+
+.blast-view__send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.blast-view__result {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+}
+
+.blast-view__sent {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.blast-view__skipped {
+  margin: 0;
+  color: var(--color-text-muted);
+}
