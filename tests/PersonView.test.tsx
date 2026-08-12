@@ -98,9 +98,16 @@ describe('PersonView — inline editing of Our Connection', () => {
 
     await user.click(within(ourConnection).getByRole('button', { name: 'Save' }))
 
-    // Re-renders with the new value...
-    await waitFor(() => expect(ourConnection.textContent).toContain('Updated detail'))
-    expect(ourConnection.textContent).not.toContain('Original detail')
+    // Re-renders with the new value. The live-query subscription and the
+    // edit-mode state update both settle asynchronously (independently of
+    // each other), so check both conditions together inside one waitFor
+    // rather than as two separate assertions — that avoids a benign
+    // intermediate-render flicker (the DB write landing a tick before the
+    // live query's own re-render lands) from being mistaken for a bug.
+    await waitFor(() => {
+      expect(ourConnection.textContent).toContain('Updated detail')
+      expect(ourConnection.textContent).not.toContain('Original detail')
+    })
 
     // ...and it's actually persisted via people.repo.updatePerson, not just local state.
     const saved = await getPerson(personId)
