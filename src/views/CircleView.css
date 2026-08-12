@@ -1,0 +1,181 @@
+/*
+  CircleView — styles scoped to this view only (class names are all
+  prefixed circle-view__ so this file can't collide with any other
+  card's CSS). Uses the shared warm-calm tokens from styles/tokens.css.
+*/
+
+.circle-view {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding: var(--space-lg);
+}
+
+.circle-view__loading {
+  color: var(--color-text-muted);
+}
+
+.circle-view__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.circle-view__title {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.circle-view__subtitle {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.circle-view__empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.circle-view__create-form,
+.circle-view__add-existing,
+.circle-view__bulk-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.circle-view__input,
+.circle-view__select {
+  flex: 1 1 auto;
+  min-width: 10rem;
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.circle-view__btn {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-calm);
+}
+
+.circle-view__btn--primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text-on-accent);
+}
+
+.circle-view__btn--primary:hover {
+  background: var(--color-accent-strong);
+}
+
+.circle-view__btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--color-text-muted);
+}
+
+.circle-view__btn--danger {
+  background: var(--color-gentle);
+  border-color: var(--color-gentle);
+  color: var(--color-text-on-accent);
+}
+
+.circle-view__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.circle-view__circle-list,
+.circle-view__person-list,
+.circle-view__bulk-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.circle-view__circle-row,
+.circle-view__person-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.circle-view__circle-name {
+  flex: 1;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  padding: var(--space-2xs) 0;
+}
+
+.circle-view__circle-name--selected {
+  color: var(--color-accent-strong);
+  font-weight: var(--font-weight-semibold);
+}
+
+.circle-view__member-count {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.circle-view__circle-actions,
+.circle-view__rename-group,
+.circle-view__confirm-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  flex-wrap: wrap;
+}
+
+.circle-view__confirm-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.circle-view__person-name {
+  color: var(--color-text);
+}
+
+.circle-view__bulk-row {
+  padding: var(--space-2xs) 0;
+}
+
+.circle-view__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: var(--tap-target-min);
+  cursor: pointer;
+}
+
+.circle-view__status {
+  color: var(--color-accent-strong);
+  font-size: var(--font-size-sm);
+}
