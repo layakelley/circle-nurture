@@ -1,0 +1,151 @@
+/*
+  NextConnectSheet — a calm picker, not a task list. Same warm-surface
+  bottom-sheet treatment as WhatNextSheet.
+*/
+
+.next-connect-sheet__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(58, 51, 44, 0.28);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 100;
+}
+
+.next-connect-sheet {
+  width: 100%;
+  max-width: 28rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: var(--shadow-card);
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (min-width: 480px) {
+  .next-connect-sheet__backdrop {
+    align-items: center;
+  }
+
+  .next-connect-sheet {
+    border-radius: var(--radius-lg);
+  }
+}
+
+.next-connect-sheet__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.next-connect-sheet__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.next-connect-sheet__option {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-md);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+  cursor: pointer;
+}
+
+.next-connect-sheet__option:hover {
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+}
+
+.next-connect-sheet__option--quiet {
+  background: transparent;
+  border-color: transparent;
+  color: var(--color-text-muted);
+}
+
+.next-connect-sheet__option--quiet:hover {
+  background: var(--color-surface-soft);
+  border-color: var(--color-border);
+}
+
+.next-connect-sheet__detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.next-connect-sheet__field-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+}
+
+.next-connect-sheet__input {
+  min-height: var(--tap-target-min);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+}
+
+.next-connect-sheet__textarea {
+  min-height: 4.5rem;
+  resize: vertical;
+}
+
+.next-connect-sheet__actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.next-connect-sheet__save-button {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-lg);
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--color-text-on-accent);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.next-connect-sheet__save-button:hover:not(:disabled) {
+  background: var(--color-accent-strong);
+}
+
+.next-connect-sheet__save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.next-connect-sheet__ghost-button {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-md);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}
+
+.next-connect-sheet__ghost-button:hover {
+  background: var(--color-surface-soft);
+  color: var(--color-text);
+}
