@@ -3,7 +3,7 @@
 *(Document 6 — the single source of truth the loops read (decision C1). The build reads this file, dispatches the next ready card, and updates it. Statuses: `pending` → `queued` (deps met) → `building` → `review` → `merged`. `blocked` = a real blocker with a written reason — never a silent skip.)*
 
 **Repo:** `circle-nurture` (branch `main`) · **Harness:** Claude-Nine · **Last heartbeat:** *(first loop writes here)*
-**Batch counter:** 1 · **Last merge stamp:** v0.1.0 / tag cn-0.1.0 · **HEAD:** (updating after batch 1 commit)
+**Batch counter:** 2 · **Last merge stamp:** v0.2.0 / tag cn-0.2.0 · **HEAD:** (updating after batch 2 commit)
 
 ---
 
@@ -19,7 +19,7 @@
 | WI | Card | Priority | Depends on | Status | Notes |
 |---|---|---|---|---|---|
 | WI-01 | Scaffold + PWA shell | P0 | — | merged | v0.1.0, score ~9.2/10, Gate 3 tie |
-| WI-02 | Local-first data layer (Dexie) | P0 | WI-01 | pending | |
+| WI-02 | Local-first data layer (Dexie) | P0 | WI-01 | merged | v0.2.0, score ~9.5/10, internal gate |
 | WI-03 | Calm home screen | P0 | WI-02 | pending | |
 | WI-04 | Add a person + Date We Met | P0 | WI-02 | pending | |
 | WI-05 | Circles | P0 | WI-02 | pending | |
@@ -51,3 +51,4 @@
 | WI | Score | Dim.1 | Gate 2 (fidelity) | Gate 3 (bar) | Fix rounds | Verdict |
 |---|---|---|---|---|---|---|
 | WI-01 | 9.2/10 | 10/10 | pass | tie (calm launch state) | 0 | MERGED |
+| WI-02 | 9.5/10 | 10/10 | pass | n/a (internal gate) | 0 | MERGED |
