@@ -1,0 +1,100 @@
+/*
+  HomeView — the calm home screen. Warm cards and chips for people and
+  circles. No charts, no counts-as-urgency, no overdue styling — just a
+  quiet list of who's in your life.
+*/
+
+.home-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-lg) var(--space-md) var(--space-3xl);
+  position: relative;
+}
+
+.home-view__title {
+  margin: 0;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
+
+.home-view__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.home-view__section-title {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.home-view__circles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.home-view__people {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.home-view__empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.home-view__empty-copy {
+  margin: 0;
+  max-width: 32ch;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-base);
+  color: var(--color-text-muted);
+}
+
+/*
+  Floating action element. Not yet wired to real navigation — a later
+  integration card connects this to the actual "add person" flow.
+  56px square comfortably clears the --tap-target-min (44px) floor.
+*/
+.home-view__fab {
+  position: fixed;
+  right: var(--space-lg);
+  bottom: calc(var(--space-lg) + env(safe-area-inset-bottom));
+  width: var(--space-3xl);
+  height: var(--space-3xl);
+  min-width: var(--tap-target-min);
+  min-height: var(--tap-target-min);
+  border: none;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+  color: var(--color-text-on-accent);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xl);
+  line-height: 1;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--duration-fast) var(--easing-calm);
+}
+
+.home-view__fab:hover,
+.home-view__fab:active {
+  background-color: var(--color-accent-strong);
+}

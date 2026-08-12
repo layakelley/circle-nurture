@@ -1,0 +1,127 @@
+import { useMemo } from 'react'
+import { useLiveQuery } from 'dexie-react-hooks'
+import { listPeople, type Person } from '../data/people.repo'
+import { listCircles } from '../data/circles.repo'
+import { listCircleMembers } from '../data/circleMembers.repo'
+import PersonCard, { type PersonCardCircle } from '../components/PersonCard'
+import CircleChip from '../components/CircleChip'
+import './HomeView.css'
+
+// ---------------------------------------------------------------------
+// The calm home screen: "your people" and "your circles", live from the
+// Dexie-backed repos. No charts, no counts-as-urgency, no overdue
+// styling — a quiet, warm list of who's in your life.
+//
+// Standalone view: not wired into App.tsx/routing here. A later
+// integration card mounts this and connects the floating action button
+// to a real "add person" flow.
+// ---------------------------------------------------------------------
+
+/**
+ * The single warmest, most human one-line detail to surface on a card —
+ * preferring the most memorable/personal detail over the more
+ * administrative ones.
+ */
+function personContext(person: Person): string | undefined {
+  return person.remember || person.whatConnectedUs || person.howMet || person.organization
+}
+
+export default function HomeView() {
+  // useLiveQuery re-runs its querier (and re-renders) whenever the tables
+  // it touches change, so this reflects live data rather than a one-time
+  // snapshot. Each returns `undefined` until the first result resolves;
+  // treated as "nothing yet" so the view never throws on load.
+  const people = useLiveQuery(() => listPeople(), []) ?? []
+  const circles = useLiveQuery(() => listCircles(), []) ?? []
+  const circleMembers = useLiveQuery(() => listCircleMembers(), []) ?? []
+
+  const circleNameById = useMemo(() => {
+    const map = new Map<number, string>()
+    for (const circle of circles) {
+      if (circle.id !== undefined) map.set(circle.id, circle.name)
+    }
+    return map
+  }, [circles])
+
+  const circlesByPersonId = useMemo(() => {
+    const map = new Map<number, PersonCardCircle[]>()
+    for (const member of circleMembers) {
+      const circleName = circleNameById.get(member.circleId)
+      if (!circleName) continue
+      const existing = map.get(member.personId) ?? []
+      existing.push({ id: member.circleId, name: circleName })
+      map.set(member.personId, existing)
+    }
+    return map
+  }, [circleMembers, circleNameById])
+
+  const isEmpty = people.length === 0 && circles.length === 0
+
+  function handleAddPerson() {
+    // TODO(future integration card): wire this up to the real
+    // "add person" flow/navigation once routing lands.
+    console.log('TODO: add person')
+  }
+
+  function handleCircleTap(circleId: number) {
+    // TODO(future integration card): wire this up to real circle
+    // navigation once routing lands.
+    console.log('TODO: open circle', circleId)
+  }
+
+  return (
+    <div className="home-view">
+      <header>
+        <h1 className="home-view__title">Circle Nurture</h1>
+      </header>
+
+      {isEmpty ? (
+        <div className="home-view__empty">
+          <p className="home-view__empty-copy">start with one circle / add your first person</p>
+        </div>
+      ) : (
+        <>
+          <section className="home-view__section" aria-label="your circles">
+            <h2 className="home-view__section-title">your circles</h2>
+            <div className="home-view__circles">
+              {circles.map((circle) =>
+                circle.id === undefined ? null : (
+                  <CircleChip
+                    key={circle.id}
+                    name={circle.name}
+                    onClick={() => handleCircleTap(circle.id as number)}
+                  />
+                ),
+              )}
+            </div>
+          </section>
+
+          <section className="home-view__section" aria-label="your people">
+            <h2 className="home-view__section-title">your people</h2>
+            <div className="home-view__people">
+              {people.map((person) =>
+                person.id === undefined ? null : (
+                  <PersonCard
+                    key={person.id}
+                    name={person.name}
+                    context={personContext(person)}
+                    circles={circlesByPersonId.get(person.id) ?? []}
+                  />
+                ),
+              )}
+            </div>
+          </section>
+        </>
+      )}
+
+      <button
+        type="button"
+        className="home-view__fab"
+        onClick={handleAddPerson}
+        aria-label="add person"
+      >
+        +
+      </button>
+    </div>
+  )
+}
