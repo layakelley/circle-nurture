@@ -1,0 +1,187 @@
+/*
+  PersonView — the person profile: Our Connection + Memories.
+
+  Two sections that must always read as distinct: "Our Connection" (who
+  they are, edited occasionally) and "Memories" (moments jotted down
+  over time). Same warm-neutral surface language as the rest of the app,
+  no urgency styling anywhere.
+*/
+
+.person-view {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.person-view--loading {
+  color: var(--color-text-muted);
+}
+
+.person-view__name {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
+
+.person-view__circles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.person-view__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.person-view__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.person-view__section-title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.person-view__facts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+}
+
+.person-view__facts p {
+  margin: 0;
+}
+
+.person-view__when-met {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.person-view__empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.person-view__edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.person-view__edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.person-view__edit-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.person-view__input {
+  min-height: var(--tap-target-min);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+}
+
+.person-view__input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.person-view__textarea {
+  resize: vertical;
+  min-height: calc(var(--tap-target-min) * 1.4);
+}
+
+.person-view__date-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.person-view__ghost-button {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-md);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+
+.person-view__ghost-button[aria-pressed='true'] {
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.person-view__edit-actions {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.person-view__save-button {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-lg);
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--color-text-on-accent);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.person-view__save-button:hover {
+  background: var(--color-accent-strong);
+}
+
+.person-view__actions {
+  display: flex;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+}
+
+.person-view__action-button {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-lg);
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--color-text-on-accent);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.person-view__action-button:hover {
+  background: var(--color-accent-strong);
+}
