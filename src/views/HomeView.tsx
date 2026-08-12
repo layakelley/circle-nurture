@@ -6,12 +6,14 @@ import { listCircles } from '../data/circles.repo'
 import { listCircleMembers } from '../data/circleMembers.repo'
 import PersonCard, { type PersonCardCircle } from '../components/PersonCard'
 import CircleChip from '../components/CircleChip'
+import NudgeCard from '../components/NudgeCard'
+import { getPeopleNeedingNudge, dismissNudge } from '../utils/nudge'
 import './HomeView.css'
 
 // ---------------------------------------------------------------------
 // The calm home screen: "your people" and "your circles", live from the
-// Dexie-backed repos. No charts, no counts-as-urgency, no overdue
-// styling — a quiet, warm list of who's in your life.
+// Dexie-backed repos, plus any gentle nudges. No charts, no counts-as-
+// urgency, no overdue styling — a quiet, warm list of who's in your life.
 //
 // Mounted at "/" by src/router.tsx. Person-tap → profile navigation
 // lands in a later card once WI-08 (person profile) exists; there's
@@ -37,6 +39,9 @@ export default function HomeView() {
   const people = useLiveQuery(() => listPeople(), []) ?? []
   const circles = useLiveQuery(() => listCircles(), []) ?? []
   const circleMembers = useLiveQuery(() => listCircleMembers(), []) ?? []
+  // Re-runs whenever people/connectionLog/nudgeDismissals change, since
+  // getPeopleNeedingNudge reads all three.
+  const nudges = useLiveQuery(() => getPeopleNeedingNudge(), []) ?? []
 
   const circleNameById = useMemo(() => {
     const map = new Map<number, string>()
@@ -70,15 +75,38 @@ export default function HomeView() {
     navigate('/circles')
   }
 
+  function handleDismissNudge(personId: number, lastConnected: Date | null) {
+    void dismissNudge(personId, lastConnected)
+  }
+
   return (
     <div className="home-view">
       <header>
         <h1 className="home-view__title">Circle Nurture</h1>
       </header>
 
+      {nudges.length > 0 ? (
+        <section className="home-view__section" aria-label="gentle nudges">
+          {nudges.map((nudge) => (
+            <NudgeCard
+              key={nudge.personId}
+              name={nudge.name}
+              onDismiss={() => handleDismissNudge(nudge.personId, nudge.lastConnected)}
+            />
+          ))}
+        </section>
+      ) : null}
+
       {isEmpty ? (
         <div className="home-view__empty">
           <p className="home-view__empty-copy">start with one circle / add your first person</p>
+          <button
+            type="button"
+            className="home-view__import-hint"
+            onClick={() => navigate('/import')}
+          >
+            or bring in people you already know
+          </button>
         </div>
       ) : (
         <>

@@ -19,9 +19,9 @@ Built with React + Vite, stored in IndexedDB (Dexie), served as an installable P
 ## Status
 
 The app is being built by an autonomous build/QC/merge loop — see `CONTROL/LEDGER.md` for
-live status and `CONTROL/CHANGELOG.md` for what's landed. Current: `v0.3.0` — scaffold, data layer, home screen, add-a-person, circles,
-last-connected, and export/privacy are in and navigable. Person profiles, memories,
-and messaging are still building.
+live status and `CONTROL/CHANGELOG.md` for what's landed. Current: `v0.4.0` — scaffold, data layer, home screen, add-a-person, circles,
+last-connected, export/privacy, contact import, memories, and gentle nudges are in.
+Person profiles and messaging are still building.
 
 ## Update
 

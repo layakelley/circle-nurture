@@ -20,4 +20,10 @@
 | 14 | 2026-08-12T15:23 | review | judge (conductor) | claude/fable-5 | WI-03, WI-04, WI-05, WI-12, WI-20 | all PASS, 9.2-9.4/10, 0 fix rounds |
 | 15 | 2026-08-12T15:25 | integration | conductor (not a WI — glue) | claude/fable-5 | router + bottom nav wiring Home/AddPerson/Circles/Settings | done; box 2 verified end-to-end |
 | 16 | 2026-08-12T15:27 | merge | merger (conductor) | claude/fable-5 | batch 3 (WI-03,04,05,12,20) | v0.3.0 / tag cn-0.3.0 |
+| 17 | 2026-08-12T15:29 | build | [MODEL x3-1] builder | claude/sonnet | WI-06 import | built, commit ade4155 |
+| 18 | 2026-08-12T15:29 | build | [MODEL x3-2] builder | claude/sonnet | WI-07 memories | built, commit 3a51c3a |
+| 19 | 2026-08-12T15:29 | build | [MODEL x3-3] builder | claude/sonnet | WI-11 gentle nudge | built, commit a49b240 |
+| 20 | 2026-08-12T15:33 | review | judge (conductor) | claude/fable-5 | WI-06, WI-07, WI-11 | all PASS, 9.1-9.4/10, 0 fix rounds |
+| 21 | 2026-08-12T15:34 | integration | conductor (glue) | claude/fable-5 | NudgeCard on Home, /import route | done |
+| 22 | 2026-08-12T15:35 | merge | merger (conductor) | claude/fable-5 | batch 4 (WI-06,07,11) | v0.4.0 / tag cn-0.4.0 |
 | — | *(the build appends each dispatch here)* | | | | | |

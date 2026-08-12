@@ -3,6 +3,7 @@ import HomeView from './views/HomeView'
 import AddPersonView from './views/AddPersonView'
 import CircleView from './views/CircleView'
 import SettingsView from './views/SettingsView'
+import ImportView from './views/ImportView'
 
 // ---------------------------------------------------------------------
 // Integration layer wiring the standalone views built by separate work
@@ -25,6 +26,7 @@ export function AppRoutes() {
       <Route path="/add-person" element={<AddPersonRoute />} />
       <Route path="/circles" element={<CircleView />} />
       <Route path="/settings" element={<SettingsView />} />
+      <Route path="/import" element={<ImportView />} />
     </Routes>
   )
 }

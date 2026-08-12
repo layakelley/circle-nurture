@@ -66,9 +66,21 @@
   color: var(--color-text-muted);
 }
 
+.home-view__import-hint {
+  margin-top: var(--space-md);
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-sm);
+  border: none;
+  background: none;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-strong);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /*
-  Floating action element. Not yet wired to real navigation — a later
-  integration card connects this to the actual "add person" flow.
+  Floating action element, wired to the add-person flow (src/router.tsx).
   56px square comfortably clears the --tap-target-min (44px) floor.
 */
 .home-view__fab {
