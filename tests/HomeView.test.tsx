@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { cleanup, render, screen } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import '@testing-library/jest-dom/vitest'
 import HomeView from '../src/views/HomeView'
 import PersonCard from '../src/components/PersonCard'
@@ -28,7 +29,7 @@ afterEach(() => {
 
 describe('HomeView', () => {
   it('renders the friendly empty state when the database has no people or circles', async () => {
-    render(<HomeView />)
+    render(<HomeView />, { wrapper: MemoryRouter })
 
     expect(await screen.findByText('start with one circle / add your first person')).toBeInTheDocument()
     // No scoreboard/chart/count language anywhere in the empty state.
@@ -44,7 +45,7 @@ describe('HomeView', () => {
     })
     await addCircleMember({ personId, circleId })
 
-    render(<HomeView />)
+    render(<HomeView />, { wrapper: MemoryRouter })
 
     // Initial data, loaded via the live query.
     expect(await screen.findByText('Ada Lovelace')).toBeInTheDocument()

@@ -12,4 +12,12 @@
 | 6 | 2026-08-12T15:15 | build | [MODEL x1] builder | claude/sonnet | WI-02 data layer | built, commit 7739538 |
 | 7 | 2026-08-12T15:20 | review | judge (conductor) | claude/fable-5 | WI-02 | PASS 9.5/10, internal gate, 0 fix rounds |
 | 8 | 2026-08-12T15:21 | merge | merger (conductor) | claude/fable-5 | batch 2 (WI-02) | v0.2.0 / tag cn-0.2.0 |
+| 9 | 2026-08-12T15:20 | build | [MODEL x5-1] builder | claude/sonnet | WI-03 calm home | built, commit d592f1e |
+| 10 | 2026-08-12T15:20 | build | [MODEL x5-2] builder | claude/sonnet | WI-04 add person | built, commit 59f276d |
+| 11 | 2026-08-12T15:20 | build | [MODEL x5-3] builder | claude/sonnet | WI-05 circles | built, commit 1252ccd |
+| 12 | 2026-08-12T15:20 | build | [MODEL x5-4] builder | claude/sonnet | WI-12 last connected | built, commit 3b3b186 |
+| 13 | 2026-08-12T15:20 | build | [MODEL x5-5] builder | claude/sonnet | WI-20 export/privacy | built, commit 4c1a892 |
+| 14 | 2026-08-12T15:23 | review | judge (conductor) | claude/fable-5 | WI-03, WI-04, WI-05, WI-12, WI-20 | all PASS, 9.2-9.4/10, 0 fix rounds |
+| 15 | 2026-08-12T15:25 | integration | conductor (not a WI — glue) | claude/fable-5 | router + bottom nav wiring Home/AddPerson/Circles/Settings | done; box 2 verified end-to-end |
+| 16 | 2026-08-12T15:27 | merge | merger (conductor) | claude/fable-5 | batch 3 (WI-03,04,05,12,20) | v0.3.0 / tag cn-0.3.0 |
 | — | *(the build appends each dispatch here)* | | | | | |

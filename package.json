@@ -1,7 +1,7 @@
 {
   "name": "circle-nurture",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "description": "Circle Nurture — a calm, private, local-first app for nurturing your people and circles.",
   "scripts": {
@@ -14,7 +14,8 @@
     "dexie": "^4.4.4",
     "dexie-react-hooks": "^4.4.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^7.0.1",

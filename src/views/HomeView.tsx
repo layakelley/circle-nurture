@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { listPeople, type Person } from '../data/people.repo'
 import { listCircles } from '../data/circles.repo'
@@ -12,9 +13,9 @@ import './HomeView.css'
 // Dexie-backed repos. No charts, no counts-as-urgency, no overdue
 // styling — a quiet, warm list of who's in your life.
 //
-// Standalone view: not wired into App.tsx/routing here. A later
-// integration card mounts this and connects the floating action button
-// to a real "add person" flow.
+// Mounted at "/" by src/router.tsx. Person-tap → profile navigation
+// lands in a later card once WI-08 (person profile) exists; there's
+// nowhere to route to yet, so PersonCard stays inert for now.
 // ---------------------------------------------------------------------
 
 /**
@@ -27,6 +28,8 @@ function personContext(person: Person): string | undefined {
 }
 
 export default function HomeView() {
+  const navigate = useNavigate()
+
   // useLiveQuery re-runs its querier (and re-renders) whenever the tables
   // it touches change, so this reflects live data rather than a one-time
   // snapshot. Each returns `undefined` until the first result resolves;
@@ -58,15 +61,13 @@ export default function HomeView() {
   const isEmpty = people.length === 0 && circles.length === 0
 
   function handleAddPerson() {
-    // TODO(future integration card): wire this up to the real
-    // "add person" flow/navigation once routing lands.
-    console.log('TODO: add person')
+    navigate('/add-person')
   }
 
-  function handleCircleTap(circleId: number) {
-    // TODO(future integration card): wire this up to real circle
-    // navigation once routing lands.
-    console.log('TODO: open circle', circleId)
+  function handleCircleTap(_circleId: number) {
+    // Deep-linking to one specific circle lands in a later card; for now
+    // the tap takes you to the circles view where every circle is listed.
+    navigate('/circles')
   }
 
   return (

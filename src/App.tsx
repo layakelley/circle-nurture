@@ -1,22 +1,32 @@
+import { HashRouter } from 'react-router-dom'
 import { Shell } from './components/Shell'
+import { BottomNav } from './components/BottomNav'
+import { AppRoutes } from './router'
 import './App.css'
 
 // ---------------------------------------------------------------------
-// Routing lands here in a later card (WI-08 and friends wire up views
-// for Home / Person / Circle / Blast / Memories / Settings). For now
-// this is a single calm placeholder home screen so the shell is real
-// and installable from day one.
+// Integration layer: mounts the router inside the safe-area-aware shell,
+// with a quiet bottom nav for Home / Circles / Settings. HashRouter (not
+// BrowserRouter): GitHub Pages (WI-21) is a static host with no server-
+// side rewrite for deep links, so hash-based routes avoid 404s on
+// refresh/direct-load without extra 404.html tricks.
+//
+// Individual screens (Home, Add Person, Circles, Settings) are each
+// built and tested standalone by their own work items; this file's only
+// job is wiring them together into one navigable app.
 // ---------------------------------------------------------------------
 
 function App() {
   return (
     <Shell>
-      <main className="home-placeholder">
-        <h1 className="home-placeholder__title">Circle Nurture</h1>
-        <p className="home-placeholder__subtitle">
-          your people and circles will appear here
-        </p>
-      </main>
+      <HashRouter>
+        <div className="app-frame">
+          <div className="app-frame__content">
+            <AppRoutes />
+          </div>
+          <BottomNav />
+        </div>
+      </HashRouter>
     </Shell>
   )
 }

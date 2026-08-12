@@ -1,25 +1,12 @@
-.home-placeholder {
-  flex: 1;
+.app-frame {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: var(--space-sm);
-  padding: var(--space-xl) var(--space-lg);
+  flex: 1;
+  min-height: 0;
 }
 
-.home-placeholder__title {
-  margin: 0;
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-tight);
-  color: var(--color-text);
-}
-
-.home-placeholder__subtitle {
-  margin: 0;
-  max-width: 28ch;
-  font-size: var(--font-size-md);
-  color: var(--color-text-muted);
+.app-frame__content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }

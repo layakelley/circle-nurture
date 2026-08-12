@@ -20,3 +20,6 @@ Thumbs.db
 
 # scratch artifacts that never belong in version control
 00-INPUT/scratch/capture-probe.png
+
+# isolated build-worktrees used by parallel builder subagents
+.claude/worktrees/
