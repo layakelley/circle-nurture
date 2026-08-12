@@ -41,4 +41,7 @@
 | 35 | 2026-08-12T16:05 | review | judge (conductor) | claude/fable-5 | WI-10, WI-14, WI-18 | all PASS, 9.3-9.6/10, 0 fix rounds; WI-10 personally code-read line-by-line given the hard privacy invariant |
 | 36 | 2026-08-12T16:07 | integration | conductor (glue) | claude/fable-5 | /blast route + Home entry, NextConnect+TrueTone on PersonView, TrueTone key in Settings | done; box 4 verified end-to-end |
 | 37 | 2026-08-12T16:11 | merge | merger (conductor) | claude/fable-5 | batch 7 (WI-10,14,18) | v0.7.0 / tag cn-0.7.0 |
+| 38 | 2026-08-12T16:12 | build | WI-21 (conductor, direct) | claude/fable-5 | GitHub Pages deploy config | done, commit 9a89e5d |
+| 39 | 2026-08-12T16:14 | deploy | GitHub Actions | actions/deploy-pages | live Pages deploy | SUCCESS, run 31636552215 |
+| 40 | 2026-08-12T16:15 | review | judge (conductor) | claude/fable-5 | WI-21 | PASS — live URL verified: curl 200 HTTPS, phone-viewport probe zero overflow + correct render, manifest scoped correctly, SW registered. **All four C5 boxes GREEN.** |
 | — | *(the build appends each dispatch here)* | | | | | |

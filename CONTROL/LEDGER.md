@@ -3,14 +3,14 @@
 *(Document 6 — the single source of truth the loops read (decision C1). The build reads this file, dispatches the next ready card, and updates it. Statuses: `pending` → `queued` (deps met) → `building` → `review` → `merged`. `blocked` = a real blocker with a written reason — never a silent skip.)*
 
 **Repo:** `circle-nurture` (branch `main`) · **Harness:** Claude-Nine · **Last heartbeat:** *(first loop writes here)*
-**Batch counter:** 8 · **Last merge stamp:** v0.8.0 / tag cn-0.8.0 · **HEAD:** (updating after batch 8 commit)
+**Batch counter:** 8 · **Last merge stamp:** v0.8.0 / tag cn-0.8.0 · **HEAD:** `9a89e5d` · **Live:** https://layakelley.github.io/circle-nurture/
 
 ---
 
 ## Completion definition (C5) — the four boxes
 | Box | Status |
 |---|---|
-| 1. Opens on a phone (HTTPS, installable PWA) | pending (shell built, not yet deployed — WI-21) |
+| 1. Opens on a phone (HTTPS, installable PWA) | **GREEN** — live at https://layakelley.github.io/circle-nurture/ (curl 200 HTTPS, phone-viewport probe renders correctly, zero overflow, manifest scoped correctly, service worker registered) |
 | 2. Add a person | **GREEN** — verified end-to-end at HEAD (probe: FAB → name → save → renders on Home) |
 | 3. Jot a memory | **GREEN** — verified end-to-end at HEAD (probe: add person → tap card → profile → jot memory) |
 | 4. Send a blast message | **GREEN** — verified end-to-end at HEAD (probe: 2 recipients selected, correct count, "no group text" line visible; WI-10's own suite proves every launch is single-recipient) |
@@ -38,7 +38,7 @@
 | WI-18 | TrueTone | P1 | WI-09 | merged | v0.7.0, score ~9.3/10, internal gate |
 | WI-19 | Story of Your Year (data capture) | P2 | WI-04, WI-07, WI-12, WI-14 | pending | |
 | WI-20 | Export/backup + privacy | P1 | WI-02 | merged | v0.3.0, score ~9.2/10, internal gate |
-| WI-21 | Publish to GitHub Pages | P0 | WI-01 | merged | v0.8.0, Pages enabled, verifying live URL post-workflow |
+| WI-21 | Publish to GitHub Pages | P0 | WI-01 | merged | v0.8.0, live URL verified — box 1 GREEN |
 
 ## Current batch / stamp
 *(The merger writes the batch here: which WIs landed, the version, the tag, the changelog + README + update-script pointer.)*
@@ -66,3 +66,4 @@
 | WI-10 | 9.6/10 | 10/10 | pass | n/a (picker/flow visuals, no Day One analog per spec) | 0 | MERGED — highest scrutiny, privacy invariant personally verified by conductor |
 | WI-14 | 9.3/10 | 10/10 | pass | n/a (internal gate) | 0 | MERGED |
 | WI-18 | 9.3/10 | 10/10 | pass | n/a (optional assist, calm-feel check) | 0 | MERGED |
+| WI-21 | — | — | pass | tie (live launch-state render, phone-viewport probe) | 0 | MERGED — live URL verified: 200 HTTPS, zero overflow, manifest + SW correct |
