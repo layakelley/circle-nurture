@@ -36,3 +36,14 @@
   gap: var(--space-2xs);
   margin-top: var(--space-2xs);
 }
+
+/* Tappable variant: same look, but as a real <button> so it's reachable
+   and activatable the way a person would expect (keyboard, screen
+   reader, tap) — reset the browser's default button chrome. */
+.person-card--tappable {
+  width: 100%;
+  align-items: flex-start;
+  font-family: var(--font-family-base);
+  text-align: left;
+  cursor: pointer;
+}

@@ -26,4 +26,8 @@
 | 20 | 2026-08-12T15:33 | review | judge (conductor) | claude/fable-5 | WI-06, WI-07, WI-11 | all PASS, 9.1-9.4/10, 0 fix rounds |
 | 21 | 2026-08-12T15:34 | integration | conductor (glue) | claude/fable-5 | NudgeCard on Home, /import route | done |
 | 22 | 2026-08-12T15:35 | merge | merger (conductor) | claude/fable-5 | batch 4 (WI-06,07,11) | v0.4.0 / tag cn-0.4.0 |
+| 23 | 2026-08-12T15:38 | build | [MODEL x1] builder | claude/sonnet | WI-08 person profile | built, commit 6c6632c |
+| 24 | 2026-08-12T15:41 | review | judge (conductor) | claude/fable-5 | WI-08 | found flaky test race (edit-persist assertions vs. live-query timing), reproduced across 15 runs, root-caused, fixed in both WI-08's new test and WI-07's already-merged test; verified 15/15 stable after fix |
+| 25 | 2026-08-12T15:47 | integration | conductor (glue) | claude/fable-5 | /person/:id route, tappable PersonCard | done; box 3 verified end-to-end |
+| 26 | 2026-08-12T15:49 | merge | merger (conductor) | claude/fable-5 | batch 5 (WI-08) | v0.5.0 / tag cn-0.5.0 |
 | — | *(the build appends each dispatch here)* | | | | | |

@@ -5,6 +5,9 @@
 ## v0.0.0 — 2026-08-12 (apparatus)
 - Project apparatus written by the conductor (sixteen documents). No app code yet.
 
+## v0.5.0 — 2026-08-12 (tag: cn-0.5.0)
+- WI-08 person profile + Our Connection: context, circles, memories, and actions compose into one page, distinct Our-Connection vs Memories sections, inline editing that persists, unknown met-date renders no date/no error. Found and fixed a real flaky-test issue while independently verifying this card (edit-persist assertions in both the new PersonView test and the already-merged WI-07 memories test raced against the live-query re-render; combined into single stable waitFor checks — 15/15 clean runs after the fix). Conductor integration: `/person/:id` route wired, person cards on Home are now tappable and open the profile. **Completion box 3 (jot a memory) verified working end-to-end at HEAD** (probe: add a person → tap their card on Home → profile opens → memory composer works). 59/59 tests pass; build exits 0.
+
 ## v0.4.0 — 2026-08-12 (tag: cn-0.4.0)
 - Wave 4, three cards: WI-06 Bring My People (selective contact import via Contact Picker API or vCard file, dedupe by phone/name, bulk circle assignment, graceful iOS fallback), WI-07 Memories (quick capture ≤2 interactions, edit/delete/pin, newest-first, reload-durable), WI-11 Gentle Nudge (45-day calm threshold, never for people with no connection log, dismissal persists per-gap, no judgment language, no red/urgent styling — new `nudgeDismissals` table, additive schema v2). Conductor integration: NudgeCard now renders live on Home above the people list, and Home's empty state offers "bring in people you already know" → the import flow. **Completion box 3 (jot a memory) is functionally complete** (MemoryComposer/MemoryList proven) but not yet reachable from a person's page — that lands with WI-08 (person profile), next. 55/55 tests pass; build exits 0.
 

@@ -15,9 +15,8 @@ import './HomeView.css'
 // Dexie-backed repos, plus any gentle nudges. No charts, no counts-as-
 // urgency, no overdue styling — a quiet, warm list of who's in your life.
 //
-// Mounted at "/" by src/router.tsx. Person-tap → profile navigation
-// lands in a later card once WI-08 (person profile) exists; there's
-// nowhere to route to yet, so PersonCard stays inert for now.
+// Mounted at "/" by src/router.tsx. Tapping a person opens their profile
+// at /person/:id.
 // ---------------------------------------------------------------------
 
 /**
@@ -135,6 +134,7 @@ export default function HomeView() {
                     name={person.name}
                     context={personContext(person)}
                     circles={circlesByPersonId.get(person.id) ?? []}
+                    onClick={() => navigate(`/person/${person.id}`)}
                   />
                 ),
               )}
