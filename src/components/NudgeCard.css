@@ -1,0 +1,74 @@
+/*
+  NudgeCard — a soft, warm, non-urgent reminder. Deliberately built from
+  the same warm/gentle tokens as the rest of the app — never an alarming
+  or urgent color — a nudge is a quiet observation, not an alarm.
+*/
+
+.nudge-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  min-height: var(--tap-target-min);
+  padding: var(--space-md);
+  background-color: var(--color-accent-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.nudge-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.nudge-card__message {
+  margin: 0;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+}
+
+.nudge-card__actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-2xs);
+}
+
+.nudge-card__action {
+  min-height: var(--tap-target-min);
+  padding: var(--space-xs) var(--space-sm);
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--color-gentle);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}
+
+.nudge-card__action:hover,
+.nudge-card__action:focus-visible {
+  background-color: var(--color-surface);
+}
+
+.nudge-card__dismiss {
+  align-self: flex-start;
+  min-height: var(--tap-target-min);
+  min-width: var(--tap-target-min);
+  padding: var(--space-2xs);
+  background: none;
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.nudge-card__dismiss:hover,
+.nudge-card__dismiss:focus-visible {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}

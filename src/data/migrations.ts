@@ -22,7 +22,7 @@ import type Dexie from 'dexie'
 //   })
 // ---------------------------------------------------------------------
 
-export const SCHEMA_VERSION = 1
+export const SCHEMA_VERSION = 2
 
 /**
  * Applies the full version chain to a Dexie instance. Called once from
@@ -39,5 +39,11 @@ export function applySchema(dexie: Dexie): void {
     memories: '++id, personId, createdAt, pinned',
     nextConnects: '++id, personId, type, status, targetDate, createdAt',
     connectionLog: '++id, personId, kind, at',
+  })
+
+  // WI-11: gentle nudges. Purely additive — a new table, no changes to any
+  // v1 table shape, so existing data is untouched on upgrade.
+  dexie.version(2).stores({
+    nudgeDismissals: '++id, personId, dismissedAt',
   })
 }

@@ -88,6 +88,21 @@ export interface ConnectionLog {
   note?: string
 }
 
+/**
+ * A person's dismissal of a gentle nudge (WI-11), keyed to the
+ * last-connected date it was dismissed for. When a NEW gap opens up after
+ * reconnecting (i.e. `getLastConnected` returns a date later than
+ * `dismissedForLastConnected`), the dismissal no longer applies and the
+ * person can be nudged again.
+ */
+export interface NudgeDismissal {
+  id?: number
+  personId: number
+  dismissedAt: Date
+  /** The `lastConnected` value (ms since epoch, or null) in effect when this was dismissed. */
+  dismissedForLastConnected: number | null
+}
+
 export const DB_NAME = 'CircleNurtureDB'
 
 export class CircleNurtureDB extends Dexie {
@@ -97,6 +112,7 @@ export class CircleNurtureDB extends Dexie {
   memories!: Table<Memory, number>
   nextConnects!: Table<NextConnect, number>
   connectionLog!: Table<ConnectionLog, number>
+  nudgeDismissals!: Table<NudgeDismissal, number>
 
   constructor(name: string = DB_NAME) {
     super(name)
