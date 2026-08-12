@@ -1,0 +1,116 @@
+/*
+  MemoryList — a person's memories, newest first. Soft timestamps, no
+  urgency styling anywhere in this file.
+*/
+
+.memory-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.memory-list__empty {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.memory-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.memory-list__text {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-base);
+  white-space: pre-wrap;
+}
+
+.memory-list__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.memory-list__time {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.memory-list__pinned-badge {
+  padding: 0.125rem var(--space-xs);
+  background: var(--color-accent-soft);
+  border-radius: var(--radius-full);
+  color: var(--color-accent-strong);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.memory-list__actions {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-2xs);
+}
+
+.memory-list__button {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-md);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+
+.memory-list__button:hover:not(:disabled) {
+  background: var(--color-accent-soft);
+}
+
+.memory-list__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.memory-list__button[aria-pressed='true'] {
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.memory-list__button--ghost {
+  background: transparent;
+}
+
+.memory-list__edit {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.memory-list__edit-input {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  resize: vertical;
+}
+
+.memory-list__edit-input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
