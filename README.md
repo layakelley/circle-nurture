@@ -1,0 +1,37 @@
+# Circle Nurture
+
+**My people. My circles. One private place to remember, communicate, and stay connected.**
+
+Circle Nurture is a mobile-first, local-first app for nurturing the people in your life —
+personal and professional. Everything lives on your device: **no account, no cloud sync,
+no analytics.** The app is deliberately calm — no dashboards, no scores, no overdue lists.
+
+- **People** — add someone with just a name (capture first, enrich later)
+- **Circles** — the groups in your life; a circle never implies group chat
+- **Memories** — jot a moment attached to a person
+- **Message / Private Blast** — each recipient opens their *own* private 1:1 SMS composer,
+  never a group text
+- **Next Connect** — a gentle, never-homework nudge to stay in touch
+- **TrueTone** — optional AI draft assistance, always reviewed by you before sending
+
+Built with React + Vite, stored in IndexedDB (Dexie), served as an installable PWA.
+
+## Development
+
+```bash
+npm ci
+npm run dev      # local dev server
+npm run build    # production build into dist/
+npm run preview  # preview the production build
+```
+
+## Deployment
+
+The app is published to GitHub Pages. Deployment is driven by the build's WI-21 card
+(see `SPEC/MASTER-SPEC.md`) and the merge train in `CONTROL/EXECUTION-PLAN.md`.
+
+## Privacy
+
+All data stays on the device. The only things that ever leave it: a single TrueTone
+AI call (only if you add a key and approve a draft) and the phone's own SMS composer
+when you tap Send.

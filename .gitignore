@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+dist-ssr/
+
+# local env / secrets (the build never reads secrets from this repo)
+.env
+.env.*
+*.local
+
+# logs
+*.log
+npm-debug.log*
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# scratch artifacts that never belong in version control
+00-INPUT/scratch/capture-probe.png

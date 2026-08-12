@@ -1,0 +1,110 @@
+{
+  "parent": {"page_id": "3ba27406-07fe-811f-bc64-f3dffb3c7ecb"},
+  "properties": {
+    "title": {
+      "title": [
+        {"type": "text", "text": {"content": "Circle Nurture feature list v2.8-12-26 (CONFIRMED)"}}
+      ]
+    }
+  },
+  "children": [
+    {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "MVP Features & Capabilities"}}]}},
+    {"object": "block", "type": "paragraph", "paragraph": {"rich_text": [{"type": "text", "text": {"content": "The MVP establishes the foundation for a mobile-first relationship management and communication platform without turning relationship management into administrative work. Private, human, quick, intuitive, and action-oriented."}}]}},
+    {"object": "block", "type": "quote", "quote": {"rich_text": [{"type": "text", "text": {"content": "Bring in my people → organize them → remember what matters → communicate → create the next connection → continue the relationship."}}]}},
+
+    {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "Original Core Features"}}]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Your People, in One Private Place. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Add the people who matter across every circle of life. Never feels like a CRM record — start with a name and whatever you want to remember; the rest accumulates naturally. Principle: Capture first. Enrich later."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Circles. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Organize people into circles — Family, Close Friends, College Friends, Work, Mentors, Professional Network, Book Club, Alumni, user-created, and more. A person can belong to many. A circle is organizational — it does NOT mean a group chat."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Memories, Jotted Down. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Quickly save small things you want to remember — \"Got the promotion,\" \"Loves sourdough,\" \"Kids are 4 and 6.\" Quick to capture, easy to retrieve, never an obligation. Purpose: I don't want to forget this."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "A Calm Home Screen. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "An immediate view of your people and circles. Human, not analytical. No charts, scores, overdue-task lists, or relationship rankings. Answers: Who are my people? What do I want to do? Who or what should I remember?"}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Message One Person. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "From a person's profile, one tap opens the phone's own messenger to that person — you communicate from your normal identity where technically permitted. Reduce the steps between thinking about someone and communicating with them."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Blast a Message Privately. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Write one message, select people / a circle / across circles; each recipient gets an individual one-to-one communication. NOT a group text — recipients never see each other; replies stay private. One message. Twelve people. Twelve private conversations. Implementation must respect iOS/Android messaging limits and applicable A2P requirements."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "A Gentle Nudge, Never Homework. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Quietly surface when it's been a while since you connected with someone important. Never guilt, never scores — \"It's been a little while since you and Angela connected.\" You decide what's appropriate. Foundation for Nurture Rhythm."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "The Right Words When You Want Them — TrueTone. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Optional drafting help: you explain what you mean; it offers a few expressions preserving your meaning, tone, relationship context, and voice. You always review and approve the exact words before anything sends. It never communicates with your people on its own. Help me express what I mean — don't manufacture the relationship."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "The Story of Your Year. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Eventually look back at the relationships, interactions, memories, reconnections, and meaningful moments you accumulated. Not popularity — the people and connections that made up your year. The MVP captures the underlying data now so the full annual experience can come later."}}
+    ]}},
+
+    {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "Additional MVP Features & Capabilities"}}]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Bring My People. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Select existing contacts and bring them in intentionally — never an automatic address-book dump. Assign to one or more circles; bulk-assign many people at once. Onboarding principle: start with one circle; the rest grows naturally."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Add a New Connection. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Contact-in regardless of how the contact arrived — vCard, QR, digital or physical business card, phone-to-phone, texted info, manual. We do NOT rebuild contact-exchange tech; we become excellent at what happens after contact information is exchanged."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Our Connection. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Relationship context: how we met, when we met, where, what connected us, organization/company, remember, circles. Distinct from Memories: Our Connection is foundational context; Memories accumulate as things happen. Months later: who is Angela, where did we meet, why did we connect?"}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Date We Met. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Relationship chronology. Defaults to today for new connections; you can accept, change, remove, or leave unknown. Enables \"Angela has been in your Circle for 3 years\" and \"Three years ago this month, you met Angela…\""}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Next Connect. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Don't leave with a contact — leave with the next connection. After adding someone, ask: Coffee / Lunch / Call / Meeting / Dinner / Activity / Visit / Other / Not Yet. Most tools capture the contact; Circle Nurture continues the connection."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Calendar Connection. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Make Next Connect actionable with lightweight calendar integration — intentionally narrow, not a scheduling platform. See availability → select a time → create the Next Connect → associate it with the person → place it on the calendar. Account for the major mobile ecosystems."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "What's Next? "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "A lightweight prompt after adding someone or completing an interaction: Send a Message / Next Connect / Add a Memory / Nothing Yet. A bridge, not another task-management system."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "After-Connection Memory. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "After a scheduled interaction, a small optional prompt: \"Anything worth remembering?\" Creates continuity between interactions. Connect → Remember → Next Connect."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Last Connected. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "A simple factual record of when you last meaningfully connected — not a score. Foundation for the gentle nudge and Nurture Rhythm. Capturing it now avoids reconstructing relationship history later."}}
+    ]}},
+    {"object": "block", "type": "numbered_list_item", "numbered_list_item": {"rich_text": [
+      {"type": "text", "text": {"content": "Context at the Moment of Connection. "}, "annotations": {"bold": true}},
+      {"type": "text", "text": {"content": "Before messaging, calling, or meeting, surface a small amount of relevant context — last connected, remember, last memory, next connect. Not a dossier — the one or two pieces that help you walk into the interaction remembering the human being. From storage to useful."}}
+    ]}},
+
+    {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "The New-Connection Workflow"}}]}},
+    {"object": "block", "type": "paragraph", "paragraph": {"rich_text": [{"type": "text", "text": {"content": "RECEIVE → CAPTURE → PLACE → REMEMBER → NEXT CONNECT → SCHEDULE: contact information enters through whatever method, you bring the person in quickly, place them in circles, capture Our Connection, decide whether there should be another interaction, and schedule while the relationship is still warm."}}]}},
+
+    {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "The Larger MVP Relationship Loop"}}]}},
+    {"object": "block", "type": "quote", "quote": {"rich_text": [{"type": "text", "text": {"content": "PEOPLE → CIRCLES → REMEMBER → COMMUNICATE → NEXT CONNECT → CONNECT → REMEMBER AGAIN"}}]}},
+
+    {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "Two Important MVP Behaviors to Protect"}}]}},
+    {"object": "block", "type": "bulleted_list_item", "bulleted_list_item": {"rich_text": [{"type": "text", "text": {"content": "Private Blast — communicate with several people individually without creating a group conversation."}}]}},
+    {"object": "block", "type": "bulleted_list_item", "bulleted_list_item": {"rich_text": [{"type": "text", "text": {"content": "Next Connect — turn \"we should get together\" into an actual next interaction."}}]}},
+
+    {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "MVP Product Principle"}}]}},
+    {"object": "block", "type": "paragraph", "paragraph": {"rich_text": [{"type": "text", "text": {"content": "Agnostic about how a person enters your life, and exceptional at what happens after they do. Turn contacts into continuing relationships."}}]}},
+    {"object": "block", "type": "quote", "quote": {"rich_text": [{"type": "text", "text": {"content": "Don't leave with a contact. Leave with a Next Connect."}}]}},
+    {"object": "block", "type": "quote", "quote": {"rich_text": [{"type": "text", "text": {"content": "Your people. Your circles. One place to remember, communicate, and stay connected."}}]}}
+  ]
+}

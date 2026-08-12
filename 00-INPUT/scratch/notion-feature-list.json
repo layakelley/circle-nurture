@@ -1,0 +1,109 @@
+{
+  "parent": {"page_id": "3ba27406-07fe-811f-bc64-f3dffb3c7ecb"},
+  "properties": {
+    "title": {
+      "title": [
+        {"type": "text", "text": {"content": "Circle Nurture feature list v1.8-12-26"}}
+      ]
+    }
+  },
+  "children": [
+    {
+      "object": "block", "type": "heading_2",
+      "heading_2": {"rich_text": [{"type": "text", "text": {"content": "Circle Nurture — what it will do"}}]}
+    },
+    {
+      "object": "block", "type": "paragraph",
+      "paragraph": {"rich_text": [{"type": "text", "text": {"content": "Here is everything Circle Nurture will do, in everyday words. Review it and tell me if it matches what you meant — confirm it as-is or tell me what to change."}}]}
+    },
+    {
+      "object": "block", "type": "numbered_list_item",
+      "numbered_list_item": {"rich_text": [
+        {"type": "text", "text": {"content": "Your people, in one private place. "}, "annotations": {"bold": true}},
+        {"type": "text", "text": {"content": "Add the people who matter — family, friends, coworkers, mentors — without turning it into a data-entry job. Just a name and whatever small detail you want to remember about them."}}
+      ]}
+    },
+    {
+      "object": "block", "type": "numbered_list_item",
+      "numbered_list_item": {"rich_text": [
+        {"type": "text", "text": {"content": "Circles. "}, "annotations": {"bold": true}},
+        {"type": "text", "text": {"content": "Put people into circles — \"Family,\" \"College friends,\" \"Work,\" your book club. A person can be in more than one. Circles are just how you group the people you care about; they're never group chats."}}
+      ]}
+    },
+    {
+      "object": "block", "type": "numbered_list_item",
+      "numbered_list_item": {"rich_text": [
+        {"type": "text", "text": {"content": "Memories, jotted down. "}, "annotations": {"bold": true}},
+        {"type": "text", "text": {"content": "A date, a small moment, a detail — \"got the promotion,\" \"loves sourdough,\" \"kids are 4 and 6.\" Kept on your phone, private to you."}}
+      ]}
+    },
+    {
+      "object": "block", "type": "numbered_list_item",
+      "numbered_list_item": {"rich_text": [
+        {"type": "text", "text": {"content": "A calm home screen. "}, "annotations": {"bold": true}},
+        {"type": "text", "text": {"content": "Your people, your circles, at a glance. It should feel human, not like a spreadsheet."}}
+      ]}
+    },
+    {
+      "object": "block", "type": "numbered_list_item",
+      "numbered_list_item": {"rich_text": [
+        {"type": "text", "text": {"content": "Message one person. "}, "annotations": {"bold": true}},
+        {"type": "text", "text": {"content": "One tap and your phone's own text messenger opens, ready to send to that person — from your number, like any normal text."}}
+      ]}
+    },
+    {
+      "object": "block", "type": "numbered_list_item",
+      "numbered_list_item": {"rich_text": [
+        {"type": "text", "text": {"content": "Blast a message to a group — privately. "}, "annotations": {"bold": true}},
+        {"type": "text", "text": {"content": "Write one message, pick the people (or a whole circle), and each person gets it as their own private one-to-one text. Nobody sees who else got it. Replies come back to you privately."}}
+      ]}
+    },
+    {
+      "object": "block", "type": "numbered_list_item",
+      "numbered_list_item": {"rich_text": [
+        {"type": "text", "text": {"content": "A gentle nudge, never homework. "}, "annotations": {"bold": true}},
+        {"type": "text", "text": {"content": "When it's been a while since you reached out to someone who matters, the app quietly notices. No scorekeeping, no guilt — just \"hey, it's been a bit.\""}}
+      ]}
+    },
+    {
+      "object": "block", "type": "numbered_list_item",
+      "numbered_list_item": {"rich_text": [
+        {"type": "text", "text": {"content": "The right words, when you want them (TrueTone). "}, "annotations": {"bold": true}},
+        {"type": "text", "text": {"content": "You tell it what you mean to say; it drafts a few versions in your own voice. You always read and approve the exact words before anything is sent. It never writes to your people on its own."}}
+      ]}
+    },
+    {
+      "object": "block", "type": "numbered_list_item",
+      "numbered_list_item": {"rich_text": [
+        {"type": "text", "text": {"content": "The story of your year. "}, "annotations": {"bold": true}},
+        {"type": "text", "text": {"content": "A way to look back and see the connections you kept alive and the memories you gathered — the piece you'd actually show somebody."}}
+      ]}
+    },
+    {
+      "object": "block", "type": "heading_2",
+      "heading_2": {"rich_text": [{"type": "text", "text": {"content": "The privacy core underneath all of it"}}]}
+    },
+    {
+      "object": "block", "type": "bulleted_list_item",
+      "bulleted_list_item": {"rich_text": [
+        {"type": "text", "text": {"content": "Your people, your memories, your messages stay on your phone. This is a private tool, not a social network."}}
+      ]}
+    },
+    {
+      "object": "block", "type": "heading_2",
+      "heading_2": {"rich_text": [{"type": "text", "text": {"content": "The MVP — the first version you'll hold"}}]}
+    },
+    {
+      "object": "block", "type": "paragraph",
+      "paragraph": {"rich_text": [
+        {"type": "text", "text": {"content": "Per your done-condition, the first version is the first three items in action: add people, jot a memory, send a blast message. Everything else builds on that."}}
+      ]}
+    },
+    {
+      "object": "block", "type": "paragraph",
+      "paragraph": {"rich_text": [
+        {"type": "text", "text": {"content": "Once you confirm this list (as-is or with changes), I'll write the full specification for the overnight build."}}
+      ]}
+    }
+  ]
+}
