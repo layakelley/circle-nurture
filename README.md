@@ -19,10 +19,9 @@ Built with React + Vite, stored in IndexedDB (Dexie), served as an installable P
 ## Status
 
 The app is being built by an autonomous build/QC/merge loop — see `CONTROL/LEDGER.md` for
-live status and `CONTROL/CHANGELOG.md` for what's landed. Current: `v0.7.0` — the full MVP loop works end to end: add people, jot memories,
-plan next connects, get gentle nudges, and send a Private Blast to several people
-at once, each their own private message. TrueTone (optional AI drafting) is in.
-Publishing to GitHub Pages is the last step before this is live on a phone.
+live status and `CONTROL/CHANGELOG.md` for what's landed. Current: `v0.8.0` — the full MVP loop works end to end, and the app is deploying
+to GitHub Pages: **https://layakelley.github.io/circle-nurture/**. Open that on
+your phone and add it to your home screen.
 
 ## Update
 

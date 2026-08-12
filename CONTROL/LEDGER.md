@@ -3,7 +3,7 @@
 *(Document 6 — the single source of truth the loops read (decision C1). The build reads this file, dispatches the next ready card, and updates it. Statuses: `pending` → `queued` (deps met) → `building` → `review` → `merged`. `blocked` = a real blocker with a written reason — never a silent skip.)*
 
 **Repo:** `circle-nurture` (branch `main`) · **Harness:** Claude-Nine · **Last heartbeat:** *(first loop writes here)*
-**Batch counter:** 7 · **Last merge stamp:** v0.7.0 / tag cn-0.7.0 · **HEAD:** (updating after batch 7 commit)
+**Batch counter:** 8 · **Last merge stamp:** v0.8.0 / tag cn-0.8.0 · **HEAD:** (updating after batch 8 commit)
 
 ---
 
@@ -38,7 +38,7 @@
 | WI-18 | TrueTone | P1 | WI-09 | merged | v0.7.0, score ~9.3/10, internal gate |
 | WI-19 | Story of Your Year (data capture) | P2 | WI-04, WI-07, WI-12, WI-14 | pending | |
 | WI-20 | Export/backup + privacy | P1 | WI-02 | merged | v0.3.0, score ~9.2/10, internal gate |
-| WI-21 | Publish to GitHub Pages | P0 | WI-01 | pending | completes box 1 |
+| WI-21 | Publish to GitHub Pages | P0 | WI-01 | merged | v0.8.0, Pages enabled, verifying live URL post-workflow |
 
 ## Current batch / stamp
 *(The merger writes the batch here: which WIs landed, the version, the tag, the changelog + README + update-script pointer.)*

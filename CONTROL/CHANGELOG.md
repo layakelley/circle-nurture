@@ -5,6 +5,9 @@
 ## v0.0.0 — 2026-08-12 (apparatus)
 - Project apparatus written by the conductor (sixteen documents). No app code yet.
 
+## v0.8.0 — 2026-08-12 (tag: cn-0.8.0)
+- WI-21 Publish to GitHub Pages: configured the Vite `base` path and manifest for a project-Pages subpath, verified locally (`vite preview` serving `/circle-nurture/`, zero overflow, real render), added `.github/workflows/deploy.yml` (build + `actions/deploy-pages`), and enabled Pages on the repo with `build_type: workflow`. Live URL: https://layakelley.github.io/circle-nurture/. **Completion box 1 (opens on a phone, HTTPS, installable) — pending final live-URL verification once the Actions workflow completes.**
+
 ## v0.7.0 — 2026-08-12 (tag: cn-0.7.0)
 - Wave 7: WI-10 Private Blast (the centerpiece — write once, select individuals/circles, each recipient gets one sequential single-recipient `sms:` launch, dedupe across overlapping selections, no-phone recipients skipped with a visible summary, "no group text" line always shown), WI-14 Next Connect (nine-option picker, factual summary with mark-done), WI-18 TrueTone (optional AI drafting assist, never auto-sends, graceful no-key/failure states). WI-10 received the highest scrutiny of any card in this run given the hard privacy invariant (no multi-recipient SMS array, ever) — independently verified by direct code reading, not just the builder's self-report: the URL builder is TypeScript-typed to a single `phone: string`, the send loop is a genuinely sequential `for` loop, and the only `.join()` calls in the file build human-readable name summaries nowhere near the URL construction. Conductor integration: Private Blast is now a prominent action on Home, Next Connect and TrueTone are both live on every person's profile, and Settings gained a TrueTone API key field. **All four completion-definition boxes are now functionally proven end-to-end at HEAD** (box 1 still needs deployment — WI-21). 94/94 tests pass; build exits 0.
 
