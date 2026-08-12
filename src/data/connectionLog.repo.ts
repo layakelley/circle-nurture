@@ -39,3 +39,25 @@ export async function getLastConnectedAt(personId: number): Promise<Date | undef
   const [mostRecent] = await listConnectionLogByPerson(personId)
   return mostRecent?.at
 }
+
+/**
+ * The most recent time we connected with this person (the max `at` across
+ * their connectionLog rows), or `null` if nothing's logged yet.
+ *
+ * Thin `null`-returning wrapper around `getLastConnectedAt` for callers
+ * (e.g. display components) that prefer `null` over `undefined` for "no
+ * value" — no duplicated query logic.
+ */
+export async function getLastConnected(personId: number): Promise<Date | null> {
+  const at = await getLastConnectedAt(personId)
+  return at ?? null
+}
+
+/**
+ * Logs a manual "we connected" entry for this person at the current
+ * moment. This is the underlying write for the manual-log action a future
+ * card wires a UI button to — it just records a `kind: 'manual'` row.
+ */
+export async function logManualConnection(personId: number, note?: string): Promise<number> {
+  return createConnectionLog({ personId, kind: 'manual', note })
+}
