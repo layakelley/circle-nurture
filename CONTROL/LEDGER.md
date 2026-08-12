@@ -3,14 +3,14 @@
 *(Document 6 — the single source of truth the loops read (decision C1). The build reads this file, dispatches the next ready card, and updates it. Statuses: `pending` → `queued` (deps met) → `building` → `review` → `merged`. `blocked` = a real blocker with a written reason — never a silent skip.)*
 
 **Repo:** `circle-nurture` (branch `main`) · **Harness:** Claude-Nine · **Last heartbeat:** *(first loop writes here)*
-**Batch counter:** 0 · **Last merge stamp:** — · **HEAD:** `d6f2673` (audited apparatus committed; repo created 2026-08-12, origin/main current)
+**Batch counter:** 1 · **Last merge stamp:** v0.1.0 / tag cn-0.1.0 · **HEAD:** (updating after batch 1 commit)
 
 ---
 
 ## Completion definition (C5) — the four boxes
 | Box | Status |
 |---|---|
-| 1. Opens on a phone (HTTPS, installable PWA) | pending |
+| 1. Opens on a phone (HTTPS, installable PWA) | pending (shell built, not yet deployed — WI-21) |
 | 2. Add a person | pending |
 | 3. Jot a memory | pending |
 | 4. Send a blast message | pending |
@@ -18,7 +18,7 @@
 ## Work queue (order per the `depends on` column — not WI number; a card may only start when all deps are `merged`)
 | WI | Card | Priority | Depends on | Status | Notes |
 |---|---|---|---|---|---|
-| WI-01 | Scaffold + PWA shell | P0 | — | pending | |
+| WI-01 | Scaffold + PWA shell | P0 | — | merged | v0.1.0, score ~9.2/10, Gate 3 tie |
 | WI-02 | Local-first data layer (Dexie) | P0 | WI-01 | pending | |
 | WI-03 | Calm home screen | P0 | WI-02 | pending | |
 | WI-04 | Add a person + Date We Met | P0 | WI-02 | pending | |
@@ -48,3 +48,6 @@
 
 ## QC verdict log
 *(Each judge verdict + score + fix rounds, one row per card, appended as the run proceeds. Full detail in the dispatch log, document 13.)*
+| WI | Score | Dim.1 | Gate 2 (fidelity) | Gate 3 (bar) | Fix rounds | Verdict |
+|---|---|---|---|---|---|---|
+| WI-01 | 9.2/10 | 10/10 | pass | tie (calm launch state) | 0 | MERGED |

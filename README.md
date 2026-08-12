@@ -16,6 +16,16 @@ no analytics.** The app is deliberately calm — no dashboards, no scores, no ov
 
 Built with React + Vite, stored in IndexedDB (Dexie), served as an installable PWA.
 
+## Status
+
+The app is being built by an autonomous build/QC/merge loop — see `CONTROL/LEDGER.md` for
+live status and `CONTROL/CHANGELOG.md` for what's landed. Current: `v0.1.0` — scaffold +
+installable PWA shell only; the rest of the app is still building.
+
+## Update
+
+To pull the latest merged build and rebuild locally: `./scripts/update.sh`
+
 ## Development
 
 ```bash

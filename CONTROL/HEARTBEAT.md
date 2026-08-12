@@ -4,9 +4,9 @@
 
 | Loop | Last tick | Status |
 |---|---|---|
-| build | *(never)* | not started |
-| review | *(never)* | not started |
-| merge | *(never)* | not started |
-| watch | *(never)* | not started |
-| bar | *(never)* | not started |
-| survival | *(never)* | not started |
+| build | 2026-08-12T15:05 | starting — WI-01 dispatched |
+| review | 2026-08-12T15:05 | armed (judge = conductor, distinct model — see session log) |
+| merge | 2026-08-12T15:05 | armed — first batch pending WI-01 |
+| watch | *(no separate terminal this run)* | not started |
+| bar | 2026-08-12T15:05 | armed (Playwright probe, proven ready) |
+| survival | 2026-08-12T15:05 | watching C5 boxes |
