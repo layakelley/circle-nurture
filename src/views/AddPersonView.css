@@ -1,0 +1,154 @@
+/*
+  AddPersonView — capture-first "add a person" screen.
+
+  Calm and uncluttered on purpose: only the name field and the "Date we
+  met" row are visible by default. Everything else lives inside the
+  <details> disclosure so the required path stays a single field + Save.
+*/
+
+.add-person {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.add-person__title {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
+
+.add-person__subtitle {
+  margin: calc(var(--space-xs) * -1) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.add-person__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.add-person__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.add-person__input {
+  min-height: var(--tap-target-min);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+}
+
+.add-person__input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.add-person__textarea {
+  resize: vertical;
+  min-height: calc(var(--tap-target-min) * 1.4);
+}
+
+.add-person__error {
+  margin: 0;
+  color: var(--color-accent-strong);
+  font-size: var(--font-size-xs);
+}
+
+.add-person__date-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.add-person__date-input {
+  flex: 1 1 10rem;
+}
+
+.add-person__ghost-button {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-md);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+
+.add-person__ghost-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.add-person__ghost-button[aria-pressed='true'] {
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.add-person__hint {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.add-person__details {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-sm);
+}
+
+.add-person__summary {
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  padding: var(--space-xs) 0;
+}
+
+.add-person__details-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+}
+
+.add-person__field--wide {
+  grid-column: 1 / -1;
+}
+
+.add-person__save-button {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-lg);
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--color-text-on-accent);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.add-person__save-button:hover {
+  background: var(--color-accent-strong);
+}
+
+.add-person__save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
