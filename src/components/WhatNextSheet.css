@@ -1,0 +1,81 @@
+/*
+  WhatNextSheet — a calm decision sheet, not a task list.
+
+  Warm, quiet, low-stakes: four options on a soft surface, no counts,
+  no urgency, no checklist chrome.
+*/
+
+.what-next-sheet__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(58, 51, 44, 0.28);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 100;
+}
+
+.what-next-sheet {
+  width: 100%;
+  max-width: 28rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: var(--shadow-card);
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (min-width: 480px) {
+  .what-next-sheet__backdrop {
+    align-items: center;
+  }
+
+  .what-next-sheet {
+    border-radius: var(--radius-lg);
+  }
+}
+
+.what-next-sheet__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.what-next-sheet__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.what-next-sheet__option {
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-md);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+  cursor: pointer;
+}
+
+.what-next-sheet__option:hover {
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+}
+
+.what-next-sheet__option--quiet {
+  background: transparent;
+  border-color: transparent;
+  color: var(--color-text-muted);
+}
+
+.what-next-sheet__option--quiet:hover {
+  background: var(--color-surface-soft);
+  border-color: var(--color-border);
+}
