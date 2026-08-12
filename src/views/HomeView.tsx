@@ -84,6 +84,17 @@ export default function HomeView() {
         <h1 className="home-view__title">Circle Nurture</h1>
       </header>
 
+      <button
+        type="button"
+        className="home-view__import-button"
+        onClick={() => navigate('/import')}
+      >
+        <span className="home-view__import-button-label">Bring My People</span>
+        <span className="home-view__import-button-hint">
+          add people you already know — pick them from your contacts
+        </span>
+      </button>
+
       {!isEmpty ? (
         <button
           type="button"
@@ -109,13 +120,6 @@ export default function HomeView() {
       {isEmpty ? (
         <div className="home-view__empty">
           <p className="home-view__empty-copy">start with one circle / add your first person</p>
-          <button
-            type="button"
-            className="home-view__import-hint"
-            onClick={() => navigate('/import')}
-          >
-            or bring in people you already know
-          </button>
         </div>
       ) : (
         <>

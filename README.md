@@ -18,9 +18,11 @@ Built with React + Vite, stored in IndexedDB (Dexie), served as an installable P
 
 ## Status
 
-The app is being built by an autonomous build/QC/merge loop — see `CONTROL/LEDGER.md` for
-live status and `CONTROL/CHANGELOG.md` for what's landed. Current: `v0.8.0` — the full MVP loop works end to end, and the app is deploying
-to GitHub Pages: **https://layakelley.github.io/circle-nurture/**. Open that on
+The app is built and live. The full MVP loop works end to end — see `CONTROL/LEDGER.md` for
+the live status and `CONTROL/CHANGELOG.md` for what's landed. Current: `v0.8.1` — the core
+build run is complete, plus a discoverability fix that puts **"Bring My People"** (import
+your contacts) front and center on the Home screen. Live at:
+**https://layakelley.github.io/circle-nurture/**. Open that on
 your phone and add it to your home screen.
 
 ## Update

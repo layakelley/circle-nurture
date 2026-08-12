@@ -5,6 +5,9 @@
 ## v0.0.0 — 2026-08-12 (apparatus)
 - Project apparatus written by the conductor (sixteen documents). No app code yet.
 
+## v0.8.1 — 2026-08-12 (post-run maintenance, conductor)
+- **Discoverability fix (after the build run completed):** "Bring My People" is now a prominent, always-visible button at the top of the Home screen ("add people you already know — pick them from your contacts") instead of a small link that only appeared in the empty state. The import screen (`/import`) was previously unreachable from the UI once even one person had been added — a real gap found by the user. Removed the now-redundant empty-state-only hint. Verified locally: build exits 0, 94/94 tests pass, Playwright probe at 390×844 confirms the button renders under the title with zero horizontal overflow; deployed to the same live URL via the existing Actions workflow.
+
 ## v0.8.0 — 2026-08-12 (tag: cn-0.8.0)
 - WI-21 Publish to GitHub Pages: configured the Vite `base` path and manifest for a project-Pages subpath, verified locally (`vite preview` serving `/circle-nurture/`, zero overflow, real render), added `.github/workflows/deploy.yml` (build + `actions/deploy-pages`), and enabled Pages on the repo with `build_type: workflow`. Live URL: https://layakelley.github.io/circle-nurture/. **Completion box 1 (opens on a phone, HTTPS, installable) — pending final live-URL verification once the Actions workflow completes.**
 
